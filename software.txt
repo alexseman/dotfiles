@@ -1,0 +1,6 @@
+Firefox -> browser
+pcmanfm -> file manager
+vlc -> media player
+emacs -> text editor
+krita -> image editor
+zsh -> custom shell
