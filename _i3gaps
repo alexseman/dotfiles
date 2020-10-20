@@ -241,8 +241,9 @@ exec_always xset -b
 # Switch alt and ctrl
 exec_always xmodmap ~/.Xmodmap
 
-#run nm applet
+#run nm applet and bluetooth applet
 exec_always nm-applet
+exec_always blueman-applet
 
 #polybar launch script
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
