@@ -222,8 +222,8 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
 # Screenshots
-bindsym --release Print exec --no-startup-id scrot -s '%Y-%m-%d_%T_$wx$h.png' -e 'mv $f ~/Pictures/Screenshot/'
-bindsym Shift+Print exec --no-startup-id scrot '%Y-%m-%d_%T_$wx$h.png' -e 'mv $f ~/Pictures/Screenshot/'
+bindsym --release Print exec --no-startup-id maim -s -u | xclip -selection clipboard -t image/png -i
+#bindsym Shift+Print exec --no-startup-id scrot '%Y-%m-%d_%T_$wx$h.png' -e 'xclip -selection c -t image/png < $f'
 
 # Compton
 #exec compton --config ~/.config/compton.conf -b
