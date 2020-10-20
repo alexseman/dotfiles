@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:System San Francisco 9
+font pango:Font Awesome 9
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -36,7 +36,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run
+#bindsym $mod+d exec dmenu_run
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -92,16 +92,16 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
-set $workspace1 "terminals"
-set $workspace2 "www"
-set $workspace3 "media"
-set $workspace4 "misc:1"
-set $workspace5 "misc:2"
-set $workspace6 "misc:3"
-set $workspace7 "misc:4"
-set $workspace8 "misc:5"
-set $workspace9 "misc:6"
-set $workspace10 "misc:7"
+set $workspace1 1
+set $workspace2 2
+set $workspace3 3
+set $workspace4 4
+set $workspace5 5
+set $workspace6 6
+set $workspace7 7
+set $workspace8 8
+set $workspace9 9
+set $workspace10 10
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
@@ -159,33 +159,49 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-set $bg-color 	         #2f343f
+set $bg-color           #2f343f
 set $inactive-bg-color   #2f343f
 set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
 
-# window colors
-#                       border              background         text                 indicator
-client.focused          $bg-color           $bg-color          $text-color          #00ff00
-client.unfocused        $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.focused_inactive $inactive-bg-color $inactive-bg-color $inactive-text-color #00ff00
-client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
-
-# bar
-bar {
-	status_command i3blocks #-c ~/.config/i3/i3blocks.conf
-	colors {
-		background $bg-color
-	    	separator #757575
-		#                  border             background         text
-		focused_workspace  $bg-color          $bg-color          $text-color
-		inactive_workspace $inactive-bg-color $inactive-bg-color $inactive-text-color
-		urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-	}
-}
 
 
+# COLORS
+client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
+client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
+client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
+client.background       #F8F8F2
+
+# BAR CONFIG
+#bar {
+#    position top
+#    status_command i3blocks #-c ~/.config/i3/i3blocks.conf
+#    colors {
+#    background #282A36
+#    statusline #F8F8F2
+#    separator  #44475A
+#
+#    focused_workspace  #44475A #44475A #F8F8F2
+#    active_workspace   #282A36 #44475A #F8F8F2
+#    inactive_workspace #282A36 #282A36 #BFBFBF
+#    urgent_workspace   #FF5555 #FF5555 #F8F8F2
+#   binding_mode       #FF5555 #FF5555 #F8F8F2
+#  }
+#}
+
+## i3-gaps CONGFIG ##
+for_window [class=".*"] border pixel 2
+gaps inner 7
+gaps outer 5
+gaps top 5
+#smart_gaps on
+smart_borders on
+
+
+bindsym $mod+d exec rofi -show run
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +10% #increase sound volume
@@ -196,17 +212,24 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle
 bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
 
+# SESSION CONTROLS
 bindsym F9 exec ~/.config/i3/lock.sh
+bindsym $mod+Shift+F13 exec xfce4-session-logoutdi
+
+# Media player controls
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
 # Screenshots
 bindsym --release Print exec --no-startup-id scrot -s '%Y-%m-%d_%T_$wx$h.png' -e 'mv $f ~/Pictures/Screenshot/'
 bindsym Shift+Print exec --no-startup-id scrot '%Y-%m-%d_%T_$wx$h.png' -e 'mv $f ~/Pictures/Screenshot/'
 
 # Compton
-exec compton --config ~/.config/compton.conf -b
+#exec compton --config ~/.config/compton.conf -b
 
 # Wallpaper
-exec_always feh --bg-scale ~/.config/i3/wallpaper.jpg
+exec_always feh --bg-fill ~/.config/i3/wallpaper.png
 
 # Keyboard
 exec_always setxkbmap -layout us,mk
@@ -217,3 +240,12 @@ exec_always xset -b
 
 # Switch alt and ctrl
 exec_always xmodmap ~/.Xmodmap
+
+#run nm applet
+exec_always nm-applet
+
+#polybar launch script
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+#picom compositor
+exec_always picom
