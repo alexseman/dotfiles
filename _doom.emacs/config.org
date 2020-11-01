@@ -1,0 +1,26 @@
+#+TITLE: Ivche_config
+
+* Personal Info
+#+BEGIN_SRC emacs-lisp
+(setq user-full-name "Ivan Trajkov"
+      user-mail-address "itrajkov999@gmail.com")
+#+END_SRC
+
+* General settings
+#+BEGIN_SRC emacs-lisp
+#+END_SRC
+* UI
+#+BEGIN_SRC emacs-lisp
+(setq doom-font (font-spec :family "Hack" :size 20))
+(setq doom-line-numbers-style 'relative)
+(setq display-line-numbers-type t)
+(setq doom-theme 'doom-palenight)
+#+END_SRC
+* Modes
+* General Packages
+* Default directories
+#+BEGIN_SRC emacs-lisp
+(setq org-roam-directory "~/roam")
+(setq org-directory "~/org/")
+#+END_SRC
+* Custom Commands
