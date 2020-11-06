@@ -2,9 +2,9 @@
 
 * {
     font: "Hack Regular";
-    foreground: #f8f8f2;
-    background-color: #282a36;
-    active-background: #6272a4;
+    foreground: #859900;
+    background-color: #002b36;
+    active-background: #073642;
     urgent-background: #ff5555;
     selected-background: @active-background;
     selected-urgent-background: @urgent-background;

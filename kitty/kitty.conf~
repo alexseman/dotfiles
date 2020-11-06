@@ -1,6 +1,0 @@
-include dracula.conf
-
-font_family Hack
-bold_font Hack Bold
-italic_font Hack Italic
-font_size 13
