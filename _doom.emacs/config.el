@@ -1,36 +1,16 @@
-#+TITLE: Ivche_config
-
-* Personal Info
-#+BEGIN_SRC emacs-lisp
 (setq user-full-name "Ivan Trajkov"
       user-mail-address "itrajkov999@gmail.com")
-#+END_SRC
 
-* General settings
-#+BEGIN_SRC emacs-lisp
-#+END_SRC
-* UI
-** Set font config
-#+BEGIN_SRC emacs-lisp
+
+
 (setq doom-font (font-spec :family "Hack" :size 15))
-#+END_SRC
-** Enable relative lines support
-#+BEGIN_SRC emacs-lisp
-(setq doom-line-numbers-style 'relative)
-#+END_SRC
-** Display line numbers
-#+BEGIN_SRC emacs-lisp
-(setq display-line-numbers-type t)
-#+END_SRC
-** Set theme
-#+BEGIN_SRC emacs-lisp
-(setq doom-theme 'doom-solarized-dark)
-#+END_SRC
 
-* Modes
-* General Packages
-** Org super agenda configuration
-#+BEGIN_SRC emacs-lisp
+(setq doom-line-numbers-style 'relative)
+
+(setq display-line-numbers-type t)
+
+(setq doom-theme 'doom-solarized-dark)
+
 (use-package! org-super-agenda
   :after org-agenda
   :init
@@ -49,38 +29,21 @@
                                   :tag "bo")))
   :config
   (org-super-agenda-mode))
-#+END_SRC
-* Org Mode
-** Org directory
-#+BEGIN_SRC emacs-lisp
+
 (setq org-directory "~/org")
-#+END_SRC
-** Org Roam directory
-#+BEGIN_SRC emacs-lisp
+
 (setq org-roam-directory "~/org/'Ivche System'/roam")
-#+END_SRC
-** Set agenda files
-#+BEGIN_SRC emacs-lisp
+
 (setq org-agenda-files '("~/org/ivches_system/"))
-#+END_SRC
-** Custom TODO keywords
-#+BEGIN_SRC emacs-lisp
+
 (after! org (setq org-todo-keywords
                   '((sequence "TODO" "DOING" "WAITING" "LATER" "DONE" "DELEGATED" "CANCELED"))))
-#+END_SRC
-** Set default files for org capture
-#+BEGIN_SRC emacs-lisp
+
  (after! org (setq +org-capture-notes-file (concat org-directory "/ivches_system/general/quick_notes.org")))
  (after! org (setq +org-capture-todo-file (concat org-directory "/ivches_system/mygtd.org")))
-#+END_SRC
-** Set custom org capture templates
-#+BEGIN_SRC emacs-lisp
+
 (after! org (setq org-capture-templates
                   '(("t" "Todo" entry (file+headline +org-capture-todo-file "Inbox")
                      "* TODO %? %i %a\n+ Added: %U"))))
-#+END_SRC
-** Set org archive file location
-#+BEGIN_SRC emacs-lisp
+
 (after! org (setq org-archive-location (concat org-directory "/ivches_system/archive/task_archive.org::")))
-#+END_SRC
-* Custom Commands
