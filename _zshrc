@@ -1,0 +1,37 @@
+LANG="en_US.UTF-8"
+LC_COLLATE="en_US.UTF-8"
+LC_CTYPE="en_US.UTF-8"
+LC_MESSAGES="en_US.UTF-8"
+LC_MONETARY="en_US.UTF-8"
+LC_NUMERIC="en_US.UTF-8"
+LC_TIME="en_US.UTF-8"
+LC_ALL="en_US.UTF-8"
+
+export ZSH="/home/ivche/.oh-my-zsh"
+
+ZSH_THEME="agnoster"
+
+plugins=(git archlinux copydir vi-mode web-search colorize copyfile extract z )
+
+#web-search plugin config
+ZSH_WEB_SEARCH_ENGINES=(reddit "https://www.reddit.com/search/?q="
+                        yt "https://www.youtube.com/results?search_query="
+
+                       )
+
+
+source $ZSH/oh-my-zsh.sh
+
+#ALIASES
+alias emacs='emacs -nw'
+alias freenode='irssi -n Ivche -c chat.freenode.net'
+#zsh autocomplete
+zstyle ':autocomplete:list-choices:*' min-input 3
+zstyle ':autocomplete:*:too-many-matches' message 'too much shit my boi'
+zstyle ':autocomplete:*:no-matches-at-all' message 'nuffin here boi'
+zstyle ':autocomplete:list-choices:*' max-lines 20
+zstyle ':autocomplete:tab:*' widget-style menu-select
+
+xset r rate 300 50
+neofetch --color_blocks off #| lolcat
+
