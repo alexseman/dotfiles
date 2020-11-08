@@ -1,6 +1,7 @@
 # Dotfiles
 
 > Dotfiles for my arch linux build
+
 > Theme: Solarized-dark
 
 ## Configs:
