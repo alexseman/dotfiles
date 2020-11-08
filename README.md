@@ -12,7 +12,7 @@
 - picom (Compositor)
 - lightdm (Display manager)
 - zsh (with oh-my-zsh) (Shell)
-- doom emacs (Ttext editor)
+- doom emacs (Text editor)
 
 ## Other directories
 - fonts
