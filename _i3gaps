@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:Font Awesome 9
+font pango: Hack Font Awesome 9
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -42,10 +42,10 @@ bindsym $mod+Shift+q kill
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -54,10 +54,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -66,7 +66,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+Shift+v split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -167,10 +167,10 @@ set $urgent-bg-color     #E53935
 
 
 # COLORS
-client.focused          #6272A4 #6272A4 #F8F8F2 #6272A4   #6272A4
-client.focused_inactive #44475A #44475A #F8F8F2 #44475A   #44475A
+client.focused          #586e75 #586e75 #586e75 #586e75   #586e75 
+client.focused_inactive #839496 #44475A #F8F8F2 #44475A   #44475A
 client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #44475A #FF5555 #F8F8F2 #FF5555   #FF5555
+client.urgent           #859900 #859900 #859900 #859900   #859900 
 client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 client.background       #002b36 
 
@@ -187,12 +187,9 @@ bar {
     focused_workspace  #073642 #93a1a1 #FFFFFF
     active_workspace   #282A36 #44475A #F8F8F2
     inactive_workspace #586e75 #073642 #FFFFFF
-    urgent_workspace   #FF5555 #FF5555 #F8F8F2
+    urgent_workspace  #859900 #859900 #859900 
    binding_mode       #FF5555 #FF5555 #F8F8F2
   }
-  output primary
-  output eDP1
-  tray_output primary
 }
 
 ## i3-gaps CONGFIG ##
@@ -246,7 +243,7 @@ exec_always nm-applet
 exec_always blueman-applet
 
 #picom compositor
-exec_always picom
+exec_always picom --config ~/.config/picom/picom.conf
 
 #nvidia optimus manager
 exec_always optimus-manager-qt
@@ -256,7 +253,7 @@ bindsym $mod+m exec xrandr --output eDP1 --off & exec /usr/local/bin/fixmonitors
 bindsym $mod+shift+m exec xrandr --output eDP1 --auto & exec /usr/local/bin/fixmonitors.sh
 
 # Wallpaper
-exec_always feh --bg-fill ~/.config/i3/wallpaper.png
+exec_always feh --bg-fill ~/.config/i3/wallpaper.jpg
 
 #PROGRAMS LAUNCH BINDINGS
 bindsym $mod+s exec emacs ~/org/ivches_system/Dashboard.org
