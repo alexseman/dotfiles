@@ -2,6 +2,8 @@
 
 > Dotfiles for my arch linux build
 
+> Theme: Solarized-dark
+
 ## Configs:
 - i3-gaps (WM)
 - i3blocks (Status bar)
