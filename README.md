@@ -15,3 +15,4 @@
 ## Other directories
 - fonts
 - scripts
+- wallpapers
