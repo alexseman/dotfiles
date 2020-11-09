@@ -13,7 +13,7 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango: Hack Font Awesome 9
+font pango: Hack FontAwesome 9
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -167,7 +167,7 @@ set $urgent-bg-color     #E53935
 
 
 # COLORS
-client.focused          #586e75 #586e75 #586e75 #586e75   #586e75 
+client.focused          #586e75 #586e75 #FFFFFF #586e75   #586e75 
 client.focused_inactive #839496 #44475A #F8F8F2 #44475A   #44475A
 client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
 client.urgent           #859900 #859900 #859900 #859900   #859900 
@@ -204,13 +204,13 @@ smart_borders on
 bindsym $mod+d exec rofi -show run
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +10% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -10% #decrease sound volume
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle
 
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 20 # increase screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 20 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 # decrease screen brightness
 
 # SESSION CONTROLS
 bindsym F9 exec ~/.config/i3/lock.sh
@@ -224,9 +224,6 @@ bindsym XF86AudioPrev exec playerctl previous
 # Screenshots
 bindsym --release Print exec --no-startup-id maim -s -u | xclip -selection clipboard -t image/png -i
 #bindsym Shift+Print exec --no-startup-id scrot '%Y-%m-%d_%T_$wx$h.png' -e 'xclip -selection c -t image/png < $f'
-
-# Compton
-#exec compton --config ~/.config/compton.conf -b
 
 # Keyboard
 exec_always setxkbmap -layout us,mk
@@ -242,19 +239,12 @@ exec_always xmodmap ~/.Xmodmap
 exec_always nm-applet
 exec_always blueman-applet
 
-#picom compositor
+# Picom compositor
 exec_always picom --config ~/.config/picom/picom.conf
-
-#nvidia optimus manager
-exec_always optimus-manager-qt
-
-#monitor management binds
-bindsym $mod+m exec xrandr --output eDP1 --off & exec /usr/local/bin/fixmonitors.sh
-bindsym $mod+shift+m exec xrandr --output eDP1 --auto & exec /usr/local/bin/fixmonitors.sh
 
 # Wallpaper
 exec_always feh --bg-fill ~/.config/i3/wallpaper.jpg
 
-#PROGRAMS LAUNCH BINDINGS
+# Programs launch bindings
 bindsym $mod+s exec emacs ~/org/ivches_system/Dashboard.org
 bindsym $mod+c exec google-chrome-stable
