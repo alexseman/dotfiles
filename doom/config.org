@@ -1,4 +1,4 @@
-#+TITLE: Ivche_config
+#+TITLE: Ivche's doom-emacs config
 
 * Personal Info
 #+BEGIN_SRC emacs-lisp
@@ -13,6 +13,7 @@
 ** Set font config
 #+BEGIN_SRC emacs-lisp
 (setq doom-font (font-spec :family "Hack" :size 15))
+(setq doom-unicode-font (font-spec :family "FontAwesome" :size 15))
 #+END_SRC
 ** Enable relative lines support
 #+BEGIN_SRC emacs-lisp
