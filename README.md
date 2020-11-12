@@ -12,6 +12,7 @@
 - picom (Compositor) **extras:**
 - lightdm (Display manager) **extras:**
 - zsh (Shell) **extras:** [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
+  - [plugins](https://github.com/ohmyzsh/ohmyzsh/wiki/Plugins)=(git archlinux copydir vi-mode web-search colorize copyfile extract z)
 - emacs (Text editor) **extras:** [doom-emacs](https://github.com/hlissner/doom-emacs)
   - Themes: 
     - [doom-solarized-dark (not compatible with terminal)](https://github.com/hlissner/emacs-doom-themes)
