@@ -4,12 +4,17 @@
 
 
 (setq doom-font (font-spec :family "Hack" :size 15))
+(setq doom-unicode-font (font-spec :family "FontAwesome" :size 15))
 
 (setq doom-line-numbers-style 'relative)
 
 (setq display-line-numbers-type t)
 
-(setq doom-theme 'doom-solarized-dark)
+(add-to-list 'custom-theme-load-path "~/.doom.d/themes/emacs-color-theme-solarized")
+(load-theme 'solarized t)
+(when (display-graphic-p)
+  (setq doom-theme 'doom-solarized-dark))
+;; (setq doom-theme 'doom-gruvbox)
 
 (use-package! org-super-agenda
   :after org-agenda

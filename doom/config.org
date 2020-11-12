@@ -1,4 +1,4 @@
-#+TITLE: Ivche's doom-emacs config
+#+TITLE: Ivche_config
 
 * Personal Info
 #+BEGIN_SRC emacs-lisp
@@ -25,7 +25,11 @@
 #+END_SRC
 ** Set theme
 #+BEGIN_SRC emacs-lisp
-(setq doom-theme 'doom-solarized-dark)
+(add-to-list 'custom-theme-load-path "~/.doom.d/themes/emacs-color-theme-solarized")
+(load-theme 'solarized t)
+(when (display-graphic-p)
+  (setq doom-theme 'doom-solarized-dark))
+;; (setq doom-theme 'doom-gruvbox)
 #+END_SRC
 
 * Modes
