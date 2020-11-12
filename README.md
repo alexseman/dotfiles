@@ -13,6 +13,9 @@
 - lightdm (Display manager) **extras:**
 - zsh (Shell) **extras:** [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
 - emacs (Text editor) **extras:** [doom-emacs](https://github.com/hlissner/doom-emacs)
+  - Themes: 
+    - [doom-solarized-dark (not compatible with terminal)](https://github.com/hlissner/emacs-doom-themes)
+    - [solarized-emacs (Terminal)](https://github.com/sellout/emacs-color-theme-solarized)
 
 ## Other directories
 - fonts: [Hack](https://github.com/source-foundry/Hack), [Font Awesome](https://github.com/FortAwesome/Font-Awesome)
