@@ -25,6 +25,8 @@ source $ZSH/oh-my-zsh.sh
 #ALIASES
 alias emacs='emacs -nw'
 alias freenode='irssi -n Ivche -c chat.freenode.net'
+alias zshconfig='emacs -nw .zshrc'
+ 
 #zsh autocomplete
 zstyle ':autocomplete:list-choices:*' min-input 3
 zstyle ':autocomplete:*:too-many-matches' message 'too much shit my boi'
@@ -32,6 +34,7 @@ zstyle ':autocomplete:*:no-matches-at-all' message 'nuffin here boi'
 zstyle ':autocomplete:list-choices:*' max-lines 20
 zstyle ':autocomplete:tab:*' widget-style menu-select
 
+# Random Config
 xset r rate 300 50
 neofetch --color_blocks off #| lolcat
-
+unsetopt BEEP
