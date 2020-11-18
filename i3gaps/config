@@ -66,10 +66,9 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+Shift+v split h
-
+bindsym $mod+z split h
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+x split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -78,6 +77,7 @@ bindsym $mod+f fullscreen toggle
 #bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
+bindsym $mod+q layout stacking
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -101,6 +101,7 @@ set $workspace7 7
 set $workspace8 8
 set $workspace9 9
 set $workspace10 10
+
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
@@ -170,13 +171,13 @@ set $urgent-bg-color     #E53935
 client.focused          #586e75 #586e75 #FFFFFF #586e75   #586e75 
 client.focused_inactive #839496 #44475A #F8F8F2 #44475A   #44475A
 client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #282A36
-client.urgent           #859900 #859900 #859900 #859900   #859900 
+client.urgent           #282A36 #859900 #FFFFFF #859900   #859900 
 client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 client.background       #002b36 
 
 # BAR CONFIG
 bar {
-    font pango: FontAwesome 12
+    font pango: FontAwesome 15
     position top
     status_command i3blocks -c ~/.config/i3/i3blocks.conf
     colors {
@@ -187,7 +188,7 @@ bar {
     focused_workspace  #073642 #2aa198 #eee8d5
     active_workspace   #282A36 #44475A #eee8d5
     inactive_workspace #073642 #073642 #eee8d5
-    urgent_workspace  #859900 #859900 #859900 
+    urgent_workspace  #282A36 #859900 #FFFFFF
    binding_mode       #FF5555 #FF5555 #F8F8F2
   }
 }
@@ -209,11 +210,12 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle
 
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 # increase screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 3 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 3 # decrease screen brightness
 
 # SESSION CONTROLS
-bindsym F9 exec ~/.config/i3/lock.sh
+# bindsym F9 exec ~/.config/i3/lock.sh
+bindsym XF86XK_LogOff exec ~/.config/i3/lock.sh
 bindsym $mod+Shift+F13 exec xfce4-session-logoutdi
 
 # Media player controls
@@ -236,8 +238,8 @@ exec_always xset -b
 exec_always xmodmap ~/.Xmodmap
 
 #run nm applet and bluetooth applet
-exec_always nm-applet
-exec_always blueman-applet
+#exec_always nm-applet
+#exec_always blueman-applet
 
 # Picom compositor
 exec_always picom --config ~/.config/picom/picom.conf
@@ -248,3 +250,9 @@ exec_always feh --bg-fill ~/.config/i3/wallpaper.jpg
 # Programs launch bindings
 bindsym $mod+s exec emacs ~/org/ivches_system/Dashboard.org
 bindsym $mod+c exec google-chrome-stable
+
+# Startup scripts
+exec_always ~/dev/scripts/sh/webcam_settings.sh 
+ 
+# Script keybinds
+bindsym $mod+Shift+z exec ~/dev/scripts/sh/layout_manager.sh
