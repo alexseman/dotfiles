@@ -5,7 +5,7 @@
 > GTK Theme: Solarized-dark
 
 ## Configs:
-- i3-gaps (WM) **extras:**
+- i3-gaps (WM) **extras:**[i3-gaps-rounded-corners](https://aur.archlinux.org/packages/i3-gaps-rounded-git/)
 - i3blocks (Status bar) **extras:** [i3blocks-contrib](https://github.com/vivien/i3blocks-contrib)
 - kitty (Terminal emulator) **extras:**
 - rofi (Window switcher) **extras:**
