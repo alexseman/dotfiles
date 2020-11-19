@@ -5,10 +5,11 @@
 > GTK Theme: Solarized-dark
 
 ## Configs:
-- i3-gaps (WM) **extras:**
+- i3-gaps (WM) **extras:**[i3-gaps-rounded-corners](https://aur.archlinux.org/packages/i3-gaps-rounded-git/)
 - i3blocks (Status bar) **extras:** [i3blocks-contrib](https://github.com/vivien/i3blocks-contrib)
 - kitty (Terminal emulator) **extras:**
 - rofi (Window switcher) **extras:**
+- ranger (Terminal file manager) **extras:** [ranger_devicons](https://github.com/alexanderjeurissen/ranger_devicons)
 - picom (Compositor) **extras:**
 - lightdm (Display manager) **extras:**
 - zsh (Shell) **extras:** [oh-my-zsh](https://github.com/ohmyzsh/ohmyzsh)
