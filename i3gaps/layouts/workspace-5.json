@@ -1,0 +1,6 @@
+{
+    "layout": "fullscreen",
+    "nodes": [
+        {"swallows": [{"class": "^Planner$"}]}
+    ]
+}

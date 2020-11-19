@@ -1,0 +1,7 @@
+{
+    "layout": "splith",
+    "nodes": [
+        {"swallows": [{"class": "^discord$"}]},
+        {"swallows": [{"class": "^Spotify$"}]}
+    ]
+}

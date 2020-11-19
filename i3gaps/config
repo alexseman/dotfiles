@@ -214,8 +214,8 @@ bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 3 # increase sc
 bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 3 # decrease screen brightness
 
 # SESSION CONTROLS
-# bindsym F9 exec ~/.config/i3/lock.sh
-bindsym XF86XK_LogOff exec ~/.config/i3/lock.sh
+ bindsym F9 exec ~/.config/i3/lock.sh
+#bindsym XF86XK_LogOff exec ~/.config/i3/lock.sh
 bindsym $mod+Shift+F13 exec xfce4-session-logoutdi
 
 # Media player controls
@@ -238,8 +238,8 @@ exec_always xset -b
 exec_always xmodmap ~/.Xmodmap
 
 #run nm applet and bluetooth applet
-#exec_always nm-applet
-#exec_always blueman-applet
+exec_always nm-applet
+exec_always blueman-applet
 
 # Picom compositor
 exec_always picom --config ~/.config/picom/picom.conf
@@ -248,11 +248,38 @@ exec_always picom --config ~/.config/picom/picom.conf
 exec_always feh --bg-fill ~/.config/i3/wallpaper.jpg
 
 # Programs launch bindings
-bindsym $mod+s exec emacs ~/org/ivches_system/Dashboard.org
 bindsym $mod+c exec google-chrome-stable
 
 # Startup scripts
-exec_always ~/dev/scripts/sh/webcam_settings.sh 
+
+# Set up layouts and startup apps
+exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/layouts/workspace-1.json'"
+exec --no-startup-id "i3-msg 'workspace 2; append_layout ~/.config/i3/layouts/workspace-2.json'"
+exec --no-startup-id "i3-msg 'workspace 3; append_layout ~/.config/i3/layouts/workspace-3.json'"
+exec --no-startup-id "i3-msg 'workspace 5; append_layout ~/.config/i3/layouts/workspace-5.json'"
+
+## Workspace 1
+exec emacs
+exec kitty
  
-# Script keybinds
-bindsym $mod+Shift+z exec ~/dev/scripts/sh/layout_manager.sh
+## Workspace 2
+exec google-chrome-stable 
+ 
+## Workspace 5
+exec planner
+
+## Workspace 3
+exec discord
+exec spotify
+ 
+
+
+
+
+
+
+
+
+
+
+
