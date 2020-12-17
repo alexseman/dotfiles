@@ -101,19 +101,19 @@ set $workspace6 6
 set $workspace7 7
 set $workspace8 8
 set $workspace9 9
-set $workspace10 10
+set $workspace10 ✅
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
 bindsym $mod+4 workspace $workspace4
-bindsym $mod+s workspace $workspace5
+bindsym $mod+5 workspace $workspace5
 bindsym $mod+6 workspace $workspace6
 bindsym $mod+7 workspace $workspace7
 bindsym $mod+8 workspace $workspace8
 bindsym $mod+9 workspace $workspace9
-bindsym $mod+0 workspace $workspace10
+bindsym $mod+s workspace $workspace10
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace $workspace1
@@ -125,10 +125,10 @@ bindsym $mod+Shift+6 move container to workspace $workspace6
 bindsym $mod+Shift+7 move container to workspace $workspace7
 bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
-bindsym $mod+Shift+0 move container to workspace $workspace10
+bindsym $mod+Shift+s move container to workspace $workspace10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+# bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
@@ -142,10 +142,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
+        bindsym h resize shrink width 10 px or 10 ppt
+        bindsym j resize grow height 10 px or 10 ppt
+        bindsym k resize shrink height 10 px or 10 ppt
+        bindsym l resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -166,10 +166,8 @@ set $text-color          #f3f4f5
 set $inactive-text-color #676E7D
 set $urgent-bg-color     #E53935
 
-
-
 # COLORS
-client.focused          #586e75 #586e75 #FFFFFF #586e75   #073642
+client.focused          #2e7677 #2e7677 #F8F8F2 #2e7677   #2e7677
 client.focused_inactive #839496 #44475A #F8F8F2 #44475A   #44475A
 client.unfocused        #282A36 #282A36 #BFBFBF #282A36   #073642
 client.urgent           #282A36 #859900 #FFFFFF #859900   #859900 
@@ -177,35 +175,39 @@ client.placeholder      #282A36 #282A36 #F8F8F2 #282A36   #282A36
 client.background       #002b36 
 
 # BAR CONFIG
-bar {
-    font pango: FontAwesome 15
-    position top
-    status_command i3blocks -c ~/.config/i3/i3blocks.conf
-    colors {
-    background #073642 
-    statusline #F8F8F2
-    separator  #44475A
+# bar {
+#     font pango: FontAwesome 13
+#     position top
+#     status_command i3blocks -c ~/.config/i3/i3blocks.conf
+#     colors {
+#     background #073F42 
+#     statusline #F8F8F2
+#     separator  #44475A
 
-    focused_workspace  #073642 #2aa198 #eee8d5
-    active_workspace   #282A36 #44475A #eee8d5
-    inactive_workspace #073642 #073642 #eee8d5
-    urgent_workspace  #282A36 #859900 #FFFFFF
-   binding_mode       #FF5555 #FF5555 #F8F8F2
-  }
-}
+#     focused_workspace  #073642 #2aa198 #eee8d5
+#     active_workspace   #282A36 #44475A #eee8d5
+#     inactive_workspace #073642 #073642 #eee8d5
+#     urgent_workspace  #282A36 #859900 #FFFFFF
+#    binding_mode       #FF5555 #FF5555 #F8F8F2
+#   }
+# }
 
 ## i3-gaps CONGFIG ##
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 2
 gaps inner 15
 gaps outer 10
 gaps top 7
-#smart_gaps on
-# smart_borders on
+smart_gaps on
+smart_borders on
 
 # Rounded corners
-border_radius 15
+# border_radius 12
 
-bindsym $mod+d exec rofi -show run
+#Rofi binds
+bindsym $mod+d exec rofi -show drun -show-icons 
+bindsym $mod+Shift+d exec rofi -show emoji -modi emoji
+bindsym $mod+g exec rofi -dmenu -p "Google" | xargs -I{} xdg-open https://www.google.de/search?q={}
+bindsym $mod+y exec rofi -dmenu -p "Youtube" | xargs -I{} xdg-open https://www.youtube.com/results?search_query={}
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5% #increase sound volume
@@ -213,11 +215,11 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute 1 toggle
 
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 3 # increase screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 3 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5 # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5 # decrease screen brightness
 
 # SESSION CONTROLS
- bindsym F9 exec ~/.config/i3/lock.sh
+bindsym F9 exec /home/ivche/dev/scripts/sh/lock.sh
 #bindsym XF86XK_LogOff exec ~/.config/i3/lock.sh
 bindsym $mod+Shift+F13 exec xfce4-session-logoutdi
 
@@ -228,7 +230,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 # Screenshots
 bindsym --release Print exec --no-startup-id maim -s -u | xclip -selection clipboard -t image/png -i
-#bindsym Shift+Print exec --no-startup-id scrot '%Y-%m-%d_%T_$wx$h.png' -e 'xclip -selection c -t image/png < $f'
+bindsym Shift+Print exec --no-startup-id scrot '%Y-%m-%d_%T_$wx$h.png' -e 'mv $f ~/Pictures/screenshots'
 
 # Keyboard
 exec_always setxkbmap -layout us,mk
@@ -255,34 +257,8 @@ bindsym $mod+c exec google-chrome-stable
 
 # Startup scripts
 
-# Set up layouts and startup apps
-exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/layouts/workspace-1.json'"
-exec --no-startup-id "i3-msg 'workspace 2; append_layout ~/.config/i3/layouts/workspace-2.json'"
-exec --no-startup-id "i3-msg 'workspace 3; append_layout ~/.config/i3/layouts/workspace-3.json'"
-exec --no-startup-id "i3-msg 'workspace 5; append_layout ~/.config/i3/layouts/workspace-5.json'"
+# Daemons
+exec pcmanfm -d &
 
-## Workspace 1
-exec emacs
-exec kitty
- 
-## Workspace 2
-exec google-chrome-stable 
- 
-## Workspace 3
-exec discord
-exec spotify
- 
-## Workspace 5
-exec planner
-
-
-
-
-
-
-
-
-
-
-
+exec polybar main
 
