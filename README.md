@@ -1,8 +1,8 @@
 # Dotfiles
+Dotfiles for my arch linux build
 
-> Dotfiles for my arch linux build
-
-> GTK Theme: Solarized-dark
+![](screenshots/ss_1.png)
+> Theme: Solarized-dark
 
 ## Configs:
 - i3-gaps (WM) **extras:**[i3-gaps-rounded-corners](https://aur.archlinux.org/packages/i3-gaps-rounded-git/)

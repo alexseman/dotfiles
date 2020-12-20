@@ -1,11 +1,11 @@
 /*Dracula theme based on the Purple official rofi theme*/
 
 * {
-    font: "Hack Regular";
-    foreground: #859900;
-    background-color: #002b36;
-    active-background: #073642;
-    urgent-background: #ff5555;
+    font: "Font Awesome 18";
+    foreground: #e1e1e0;
+    background-color: #2d3743;
+    active-background: #2d3753;
+    urgent-background: #2d3743;
     selected-background: @active-background;
     selected-urgent-background: @urgent-background;
     selected-active-background: @active-background;
@@ -15,33 +15,33 @@
 
 #window {
     background-color: @background;
-    border:           1;
+    border:           5;
     border-color: @bordercolor;
-    padding:          5;
+    padding:          10;
 }
 #mainbox {
     border:  0;
-    padding: 0;
+    padding: 5;
 }
 #message {
     border:       1px dash 0px 0px ;
     border-color: @separatorcolor;
-    padding:      1px ;
+    padding:      10px ;
 }
 #textbox {
     text-color: @foreground;
 }
 #listview {
     fixed-height: 0;
-    border:       2px dash 0px 0px ;
+    border:       3px dash 0px 0px ;
     border-color: @bordercolor;
-    spacing:      2px ;
+    spacing:      10px ;
     scrollbar:    false;
-    padding:      2px 0px 0px ;
+    padding:      5px 5px 5px ;
 }
 #element {
     border:  0;
-    padding: 1px ;
+    padding: 5px ;
 }
 #element.normal.normal {
     background-color: @background;
@@ -96,7 +96,7 @@
 #inputbar {
     spacing:    0;
     text-color: @foreground;
-    padding:    1px ;
+    padding:    0px ;
 }
 #case-indicator {
     spacing:    0;
