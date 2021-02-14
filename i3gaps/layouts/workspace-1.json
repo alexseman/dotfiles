@@ -1,7 +1,0 @@
-{
-    "layout": "splith",
-    "nodes": [
-        {"swallows": [{"class": "^Emacs$"}]},
-        {"swallows": [{"class": "^kitty$"}]}
-    ]
-}

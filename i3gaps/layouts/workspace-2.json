@@ -1,6 +1,0 @@
-{
-    "layout": "stacked",
-    "nodes": [
-        {"swallows": [{"class": "^Google-chrome$"}]}
-    ]
-}
